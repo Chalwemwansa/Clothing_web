@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cat delete_all.sql | mysql -p
+
+rails db:migrate
