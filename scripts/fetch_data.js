@@ -1,45 +1,39 @@
-<script>
-// module queries an api for data and makes an html page
-// dynamically with the data
-
 document.addEventListener('DOMContentLoaded', function() {
-  const url = 'https://localhost:3000/';
+  const url = 'https://127.0.0.1:3000/product/4';
 
-  // get the data from the api and then display it in the different html tags and classes 
-  fetch(url)
-    .then(response => {
-      if (response.status !== 200) {
-        console.log(`There was a problem. Status Code: ${response.status}`);
-        return;
-      } else {
-        return response.json();
-      }
-    })
-    .then(data => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+
+  xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      const data = JSON.parse(xhr.responseText);
       handleProducts(data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+    } else {
+      console.error('Error:', xhr.statusText);
+    }
+  };
+
+  xhr.onerror = function() {
+    console.error('Request failed');
+  };
+
+  xhr.send(); // Initiate the request
 
   function handleProducts(data) {
-    if (data !== null) {
-      const productsGrid = document.querySelector('#products-grid');
-      data.forEach(product => {
-        handleProduct(product, productsGrid);
-      });
-    };
-  };
+    const productsGrid = document.querySelector('#products-grid');
+    data.forEach(product => {
+      handleProduct(product, productsGrid);
+    });
+  }
 
   function handleProduct(product, productsGrid) {
     const productDiv = document.createElement('div');
+    productDiv.classList.add('product-shop_link');
 
-    productDiv.setAttribute('class', 'product-shop_link');
-    // gets the first image in the list
-    // product.images and makes a corresponding src
+    // Get the first image in the list from product.images and set its corresponding src
     const image = document.createElement('img');
-    image.setAttribute('src', product.images[0].image_url);
-    image.setAttribute('class', 'product_image');
+    image.src = product.images[0].image_url;
+    image.classList.add('product_image');
     productDiv.appendChild(image);
 
     const productName = document.createElement('p');
@@ -53,11 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     productDiv.appendChild(productPrice);
 
     productsGrid.appendChild(productDiv);
-  };
-
-  request.send()
+  }
 });
-
-</script>
-
 
