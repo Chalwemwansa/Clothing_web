@@ -1,0 +1,40 @@
+<!-- HTML Form -->
+<form id="uploadForm">
+  <input type="file" id="fileInput" name="file">
+  <button type="submit">Upload</button>
+</form>
+
+<!-- Custom JavaScript -->
+<script>
+  document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var fileInput = document.getElementById('fileInput');
+    var file = fileInput.files[0];
+
+    if (!file) {
+      alert('Please select a file to upload.');
+      return;
+    }
+
+    var formData = new FormData();
+    formData.append('image', file);
+    formData.append('product_id', 7);
+
+    fetch('http://127.0.0.1:3000/image', {
+      method: 'POST',
+      body: formData,
+      // Optionally include headers, such as authorization tokens or content type
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('File uploaded successfully!');
+      } else {
+        throw new Error('File upload failed.');
+      }
+    })
+    .catch(error => {
+      alert('Error: ' + error.message);
+    });
+  });
+</script>

@@ -2479,3 +2479,1339 @@ Processing by CategoriesController#get_categories as HTML
 Completed 200 OK in 27ms (Views: 5.4ms | ActiveRecord: 20.6ms | Allocations: 886)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-16 12:13:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (116.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (18.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (229.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (16.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 2452ms (Views: 1.2ms | ActiveRecord: 952.6ms | Allocations: 180243)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-16 12:16:00 +0200
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (46.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 85ms (Views: 29.1ms | ActiveRecord: 51.3ms | Allocations: 4172)
+
+
+Started GET "/category/shirts" for 127.0.0.1 at 2024-05-16 12:16:35 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"shirts"}
+  [1m[36mCategory Load (69.7ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'shirts' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+Completed 200 OK in 237ms (Views: 0.3ms | ActiveRecord: 69.7ms | Allocations: 7024)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-16 12:16:48 +0200
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 853)
+
+
+Started GET "/category/shirts" for 127.0.0.1 at 2024-05-16 12:17:12 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"shirts"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'shirts' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 582)
+
+
+Started GET "/category/shirt" for 127.0.0.1 at 2024-05-16 12:17:18 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"shirt"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'shirt' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mProduct Load (21.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 3[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 7[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductSize Load (0.8ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 7[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 190ms (Views: 0.7ms | ActiveRecord: 24.0ms | Allocations: 9857)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-16 13:24:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (89.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as */*
+  [1m[36mProduct Load (99.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (6.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (7.7ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1900ms (Views: 1.5ms | ActiveRecord: 387.8ms | Allocations: 180244)
+
+
+Started POST "/" for 127.0.0.1 at 2024-05-16 13:35:05 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/product" for 127.0.0.1 at 2024-05-16 13:36:23 +0200
+Processing by ProductsController#post_product as */*
+  Parameters: {"name"=>"gucci", "price"=>"200.99", "description"=>"this is a gucci bag", "details"=>"gucci bag can be washed  with caution", "shipping_details"=>"can be gotten from mature square", "category"=>"bag"}
+  [1m[36mCategory Exists? (292.4ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `post_product'
+  [1m[36mTRANSACTION (117.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+  [1m[36mCategory Create (1325.8ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES (NULL, '2024-05-16 11:36:24.121365', '2024-05-16 11:36:24.121365')[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+  [1m[36mTRANSACTION (636.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+[31mUnpermitted parameter: :category. Context: { controller: ProductsController, action: post_product, request: #<ActionDispatch::Request:0x00007fe8f000c450>, params: {"name"=>"gucci", "price"=>"200.99", "description"=>"this is a gucci bag", "details"=>"gucci bag can be washed  with caution", "shipping_details"=>"can be gotten from mature square", "category"=>"bag", "controller"=>"products", "action"=>"post_product"} }[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mCategory Load (45.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mProduct Create (281.0ms)[0m  [1m[32mINSERT INTO `products` (`name`, `price`, `description`, `details`, `shipping_details`, `category_id`, `created_at`, `updated_at`) VALUES ('gucci', 200.99, 'this is a gucci bag', 'gucci bag can be washed  with caution', 'can be gotten from mature square', 5, '2024-05-16 11:36:26.509076', '2024-05-16 11:36:26.509076')[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mTRANSACTION (1112.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+Completed 200 OK in 4740ms (Views: 0.4ms | ActiveRecord: 4022.5ms | Allocations: 17948)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-16 13:37:10 +0200
+Processing by ProductsController#get_products as */*
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (187.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 8)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (142.8ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 8)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 371ms (Views: 1.2ms | ActiveRecord: 331.3ms | Allocations: 2822)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-16 13:39:17 +0200
+Processing by CategoriesController#get_categories as */*
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 1.2ms | Allocations: 942)
+
+
+Started DELETE "/category/?category_name=null" for 127.0.0.1 at 2024-05-16 13:45:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CategoriesController#delete_category as */*
+  Parameters: {"category_name"=>"null"}
+  [1m[36mCategory Load (13.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'null' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:25:in `delete_category'
+Completed 200 OK in 159ms (Views: 0.4ms | ActiveRecord: 73.8ms | Allocations: 16762)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-16 13:47:14 +0200
+Processing by CategoriesController#get_categories as */*
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 274ms (Views: 101.0ms | ActiveRecord: 171.8ms | Allocations: 68332)
+
+
+Started DELETE "/category/?category_name=null" for 127.0.0.1 at 2024-05-16 13:47:31 +0200
+Processing by CategoriesController#delete_category as */*
+  Parameters: {"category_name"=>"null"}
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'null' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:25:in `delete_category'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 597)
+
+
+Started DELETE "/category/?id=5" for 127.0.0.1 at 2024-05-16 13:49:34 +0200
+Processing by CategoriesController#delete_category as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:25:in `delete_category'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:27:in `delete_category'
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 5[0m
+  ↳ app/controllers/categories_controller.rb:27:in `delete_category'
+  [1m[36mProductImage Load (3.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 8[0m
+  ↳ app/controllers/categories_controller.rb:27:in `delete_category'
+  [1m[36mProductSize Load (1.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 8[0m
+  ↳ app/controllers/categories_controller.rb:27:in `delete_category'
+  [1m[36mProduct Destroy (286.3ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 8[0m
+  ↳ app/controllers/categories_controller.rb:27:in `delete_category'
+  [1m[36mCategory Destroy (158.2ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 5[0m
+  ↳ app/controllers/categories_controller.rb:27:in `delete_category'
+  [1m[36mTRANSACTION (707.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:27:in `delete_category'
+Completed 200 OK in 1483ms (Views: 0.6ms | ActiveRecord: 1200.8ms | Allocations: 91692)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-16 13:52:06 +0200
+Processing by CategoriesController#get_categories as */*
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 855)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-16 14:00:43 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (268.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (52.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (8.7ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1004ms (Views: 2.3ms | ActiveRecord: 372.4ms | Allocations: 32916)
+
+
+Started POST "/product" for 127.0.0.1 at 2024-05-16 14:02:03 +0200
+Processing by ProductsController#post_product as */*
+  Parameters: {"name"=>"gucci", "price"=>"200.99", "description"=>"this is a gucci bag", "details"=>"gucci bag can be washed  with caution", "shipping_details"=>"can be gotten from mature square", "category_name"=>"bag"}
+  [1m[36mCategory Exists? (50.9ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `post_product'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+  [1m[36mCategory Create (246.1ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES ('bag', '2024-05-16 12:02:03.733375', '2024-05-16 12:02:03.733375')[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+  [1m[36mTRANSACTION (259.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+[31mUnpermitted parameter: :category_name. Context: { controller: ProductsController, action: post_product, request: #<ActionDispatch::Request:0x00007fcc1c30e1f8>, params: {"name"=>"gucci", "price"=>"200.99", "description"=>"this is a gucci bag", "details"=>"gucci bag can be washed  with caution", "shipping_details"=>"can be gotten from mature square", "category_name"=>"bag", "controller"=>"products", "action"=>"post_product"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mProduct Create (71.5ms)[0m  [1m[32mINSERT INTO `products` (`name`, `price`, `description`, `details`, `shipping_details`, `category_id`, `created_at`, `updated_at`) VALUES ('gucci', 200.99, 'this is a gucci bag', 'gucci bag can be washed  with caution', 'can be gotten from mature square', 6, '2024-05-16 12:02:04.311316', '2024-05-16 12:02:04.311316')[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mTRANSACTION (1041.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+Completed 200 OK in 1762ms (Views: 1.0ms | ActiveRecord: 1670.9ms | Allocations: 7111)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-16 14:02:20 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (1.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (16.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 44ms (Views: 0.7ms | ActiveRecord: 18.8ms | Allocations: 2807)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-16 14:02:59 +0200
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.8ms | Allocations: 899)
+
+
+Started DELETE "/category/:category_name=bag" for 127.0.0.1 at 2024-05-16 14:06:31 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/category/:category_name=bag"):
+  
+Started GET "/" for 127.0.0.1 at 2024-05-17 13:27:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (95.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (62.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (36.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (2.3ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 3697ms (Views: 1.3ms | ActiveRecord: 1268.8ms | Allocations: 180410)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-17 13:32:08 +0200
+Processing by ProductsController#get_products as */*
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (194.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (50.4ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 290ms (Views: 6.8ms | ActiveRecord: 246.7ms | Allocations: 2822)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-17 13:43:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (47.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 340ms (Views: 202.1ms | ActiveRecord: 66.0ms | Allocations: 76232)
+
+
+Started GET "/category/bag" for 127.0.0.1 at 2024-05-17 13:45:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"bag"}
+Started GET "/category/bag" for 127.0.0.1 at 2024-05-17 13:45:43 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"bag"}
+  [1m[36mCategory Load (178.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mProduct Load (4.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 6[0m
+  [1m[36mProduct Load (16.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 6[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (0.7ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (9.7ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductSize Load (1.0ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 1094ms (Views: 0.5ms | ActiveRecord: 95.3ms | Allocations: 147754)
+
+
+  [1m[36mProductSize Load (44.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 1460ms (Views: 0.4ms | ActiveRecord: 311.1ms | Allocations: 166259)
+
+
+Started POST "/" for 127.0.0.1 at 2024-05-17 13:51:44 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/product" for 127.0.0.1 at 2024-05-17 13:52:20 +0200
+Processing by ProductsController#post_product as */*
+  Parameters: {"name"=>"name", "price"=>"23.5", "description"=>"this is a name product", "details"=>"wash with caution", "shipping_details"=>"can be collected from monk square", "category_name"=>"bag"}
+  [1m[36mCategory Exists? (15.7ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `post_product'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:17:in `post_product'
+[31mUnpermitted parameter: :category_name. Context: { controller: ProductsController, action: post_product, request: #<ActionDispatch::Request:0x00007f8410f913c0>, params: {"name"=>"name", "price"=>"23.5", "description"=>"this is a name product", "details"=>"wash with caution", "shipping_details"=>"can be collected from monk square", "category_name"=>"bag", "controller"=>"products", "action"=>"post_product"} }[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mProduct Create (1290.6ms)[0m  [1m[32mINSERT INTO `products` (`name`, `price`, `description`, `details`, `shipping_details`, `category_id`, `created_at`, `updated_at`) VALUES ('name', 23.5, 'this is a name product', 'wash with caution', 'can be collected from monk square', 6, '2024-05-17 11:52:21.380896', '2024-05-17 11:52:21.380896')[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mTRANSACTION (1309.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+Completed 200 OK in 3317ms (Views: 1.0ms | ActiveRecord: 2957.2ms | Allocations: 153515)
+
+
+Started GET "/category/bag" for 127.0.0.1 at 2024-05-17 13:54:57 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"bag"}
+  [1m[36mCategory Load (4.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 6[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (20.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (9, 10)[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductSize Load (1.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (9, 10)[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 106ms (Views: 0.7ms | ActiveRecord: 42.7ms | Allocations: 13014)
+
+
+Started DELETE "/product/10" for 127.0.0.1 at 2024-05-17 13:56:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#delete_product as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:44:in `delete_product'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `delete_product'
+  [1m[36mProductImage Load (1.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 10[0m
+  ↳ app/controllers/products_controller.rb:46:in `delete_product'
+  [1m[36mProductSize Load (0.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 10[0m
+  ↳ app/controllers/products_controller.rb:46:in `delete_product'
+  [1m[36mProduct Destroy (41.5ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 10[0m
+  ↳ app/controllers/products_controller.rb:46:in `delete_product'
+  [1m[36mTRANSACTION (441.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `delete_product'
+Completed 200 OK in 856ms (Views: 0.4ms | ActiveRecord: 548.4ms | Allocations: 154370)
+
+
+Started GET "/category/bag" for 127.0.0.1 at 2024-05-17 13:57:36 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"bag"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 6[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (1.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductSize Load (0.8ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 14.5ms | Allocations: 11195)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-17 13:59:18 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (0.8ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 101ms (Views: 0.6ms | ActiveRecord: 2.2ms | Allocations: 29837)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-17 14:10:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (8.6ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.5ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1720ms (Views: 0.7ms | ActiveRecord: 630.1ms | Allocations: 180405)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-17 14:11:29 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (4.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (13.5ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (257.0ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1131ms (Views: 0.6ms | ActiveRecord: 274.8ms | Allocations: 2833)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-17 14:11:36 +0200
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 595ms (Views: 33.3ms | ActiveRecord: 68.7ms | Allocations: 4204)
+
+
+Started POST "/product" for 127.0.0.1 at 2024-05-17 14:12:44 +0200
+Processing by ProductsController#post_product as */*
+  Parameters: {"category_name"=>"trousers", "name"=>"jeans", "price"=>"250.99", "description"=>"this is a very durable jean", "details"=>"can be washed any way you want", "shipping_details"=>"can be collected from monk square"}
+  [1m[36mCategory Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`name` = 'trousers' LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `post_product'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+  [1m[36mCategory Create (2732.7ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES ('trousers', '2024-05-17 12:12:44.919848', '2024-05-17 12:12:44.919848')[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+  [1m[36mTRANSACTION (775.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:15:in `post_product'
+[31mUnpermitted parameter: :category_name. Context: { controller: ProductsController, action: post_product, request: #<ActionDispatch::Request:0x00007febe80c6a58>, params: {"category_name"=>"trousers", "name"=>"jeans", "price"=>"250.99", "description"=>"this is a very durable jean", "details"=>"can be washed any way you want", "shipping_details"=>"can be collected from monk square", "controller"=>"products", "action"=>"post_product"} }[0m
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mProduct Create (270.1ms)[0m  [1m[32mINSERT INTO `products` (`name`, `price`, `description`, `details`, `shipping_details`, `category_id`, `created_at`, `updated_at`) VALUES ('jeans', 250.99, 'this is a very durable jean', 'can be washed any way you want', 'can be collected from monk square', 7, '2024-05-17 12:12:48.654418', '2024-05-17 12:12:48.654418')[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mTRANSACTION (861.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+Completed 200 OK in 4884ms (Views: 0.3ms | ActiveRecord: 4649.1ms | Allocations: 9557)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-17 14:13:15 +0200
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (62.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 67ms (Views: 4.3ms | ActiveRecord: 62.4ms | Allocations: 944)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-17 14:13:25 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (0.8ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 34ms (Views: 0.6ms | ActiveRecord: 2.4ms | Allocations: 2980)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-20 09:26:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1422.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (1825.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (5.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (109.3ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 7482ms (Views: 2.1ms | ActiveRecord: 4619.8ms | Allocations: 185846)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-20 09:27:33 +0200
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (180.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 848ms (Views: 362.5ms | ActiveRecord: 198.9ms | Allocations: 4267)
+
+
+Started GET "/category/short" for 127.0.0.1 at 2024-05-20 09:27:55 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"short"}
+  [1m[36mCategory Load (229.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'short' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mProduct Load (73.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 2[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (2.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductSize Load (1.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 1799ms (Views: 0.5ms | ActiveRecord: 306.8ms | Allocations: 6081)
+
+
+Started GET "/category/bag" for 127.0.0.1 at 2024-05-20 09:28:06 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"bag"}
+  [1m[36mCategory Load (40.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mProduct Load (24.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 6[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (1.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductSize Load (0.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 9[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 93ms (Views: 0.5ms | ActiveRecord: 66.4ms | Allocations: 3115)
+
+
+Started POST "/product" for 127.0.0.1 at 2024-05-20 09:31:56 +0200
+Processing by ProductsController#post_product as */*
+  Parameters: {"name"=>"masai", "price"=>"44.3", "description"=>"this is a masai bag", "details"=>"masai is very strong", "shipping_details"=>"can be gotten from kalingalinga", "category_name"=>"bag"}
+  [1m[36mCategory Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `post_product'
+  [1m[36mCategory Load (6.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:17:in `post_product'
+[31mUnpermitted parameter: :category_name. Context: { controller: ProductsController, action: post_product, request: #<ActionDispatch::Request:0x00007fc05cfb6020>, params: {"name"=>"masai", "price"=>"44.3", "description"=>"this is a masai bag", "details"=>"masai is very strong", "shipping_details"=>"can be gotten from kalingalinga", "category_name"=>"bag", "controller"=>"products", "action"=>"post_product"} }[0m
+  [1m[36mTRANSACTION (111.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mCategory Load (34.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mProduct Create (1420.0ms)[0m  [1m[32mINSERT INTO `products` (`name`, `price`, `description`, `details`, `shipping_details`, `category_id`, `created_at`, `updated_at`) VALUES ('masai', 44.3, 'this is a masai bag', 'masai is very strong', 'can be gotten from kalingalinga', 6, '2024-05-20 07:31:56.461259', '2024-05-20 07:31:56.461259')[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+  [1m[36mTRANSACTION (700.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:23:in `post_product'
+Completed 200 OK in 2358ms (Views: 0.9ms | ActiveRecord: 2273.3ms | Allocations: 5794)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-05-20 09:32:27 +0200
+Processing by CategoriesController#get_categories as HTML
+  [1m[36mCategory Load (37.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/controllers/categories_controller.rb:5:in `get_categories'
+Completed 200 OK in 75ms (Views: 36.2ms | ActiveRecord: 37.5ms | Allocations: 944)
+
+
+Started GET "/category/bag" for 127.0.0.1 at 2024-05-20 09:32:43 +0200
+Processing by CategoriesController#get_category_product as HTML
+  Parameters: {"category_name"=>"bag"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`name` = 'bag' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:10:in `get_category_product'
+  [1m[36mProduct Load (61.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 6[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductImage Load (116.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (9, 12)[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+  [1m[36mProductSize Load (58.6ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (9, 12)[0m
+  ↳ app/controllers/categories_controller.rb:13:in `get_category_product'
+Completed 200 OK in 335ms (Views: 0.6ms | ActiveRecord: 237.3ms | Allocations: 3272)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-20 09:33:00 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.0ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 44ms (Views: 10.4ms | ActiveRecord: 2.5ms | Allocations: 3128)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-23 12:17:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1414.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (447.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (80.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (123.5ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 4792ms (Views: 0.8ms | ActiveRecord: 2959.8ms | Allocations: 180739)
+
+
+Started POST "/size" for 127.0.0.1 at 2024-05-23 12:20:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductSizesController#post_size as */*
+  Parameters: {"product_id"=>"4", "size"=>"L"}
+  [1m[36mProductSize Load (27.8ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`size` = 'L' LIMIT 1[0m
+  ↳ app/controllers/product_sizes_controller.rb:4:in `post_size'
+  [1m[36mTRANSACTION (18.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_sizes_controller.rb:9:in `post_size'
+  [1m[36mProduct Load (8.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_sizes_controller.rb:9:in `post_size'
+  [1m[36mProductSize Create (1852.6ms)[0m  [1m[32mINSERT INTO `product_sizes` (`size`, `product_id`, `created_at`, `updated_at`) VALUES ('L', 4, '2024-05-23 10:20:02.006557', '2024-05-23 10:20:02.006557')[0m
+  ↳ app/controllers/product_sizes_controller.rb:9:in `post_size'
+  [1m[36mTRANSACTION (1144.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_sizes_controller.rb:9:in `post_size'
+Completed 200 OK in 3787ms (Views: 0.4ms | ActiveRecord: 3306.2ms | Allocations: 176873)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-23 12:20:09 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (34.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 129ms (Views: 0.7ms | ActiveRecord: 70.8ms | Allocations: 10724)
+
+
+Started GET "/9" for 127.0.0.1 at 2024-05-23 12:25:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/9"):
+  
+Started GET "/product?9" for 127.0.0.1 at 2024-05-23 12:25:37 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/product"):
+  
+Started GET "/product/?id=9" for 127.0.0.1 at 2024-05-23 12:25:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/product"):
+  
+Started GET "/product/9" for 127.0.0.1 at 2024-05-23 12:26:14 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (1.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 9[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (1.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 9[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 397ms (Views: 10.6ms | ActiveRecord: 111.7ms | Allocations: 153689)
+
+
+Started GET "/product/4" for 127.0.0.1 at 2024-05-23 12:26:23 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (0.8ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 123ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 30229)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 09:17:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (720.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (879.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (151.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (108.0ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 5212ms (Views: 1.8ms | ActiveRecord: 3347.4ms | Allocations: 180777)
+
+
+Started POST "/image" for ::1 at 2024-05-24 09:27:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/home/chalwe/projects/clothing_web/app/controllers/product_images_controller.rb:28: syntax error, unexpected symbol literal
+    image.:destroy
+          ^
+):
+  
+app/controllers/product_images_controller.rb:28: syntax error, unexpected symbol literal
+Started POST "/image" for ::1 at 2024-05-24 09:27:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f733ca2e480 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1189-18at6gm.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 4520)
+
+
+  
+NameError (undefined local variable or method `uploaded_file' for #<ProductImagesController:0x0000000000c4e0>
+Did you mean?  uploaded_image):
+  
+app/controllers/product_images_controller.rb:6:in `post_image'
+Started POST "/image" for ::1 at 2024-05-24 09:28:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb20ca8a0f0 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1238-unqh2b.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 4010)
+
+
+  
+NameError (uninitialized constant ProductImagesController::Product_image
+Did you mean?  ProductSize):
+  
+app/controllers/product_images_controller.rb:17:in `post_image'
+Started POST "/image" for ::1 at 2024-05-24 09:30:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fdaf4a3b9a8 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1286-4lxmrk.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+Completed 500 Internal Server Error in 1215ms (ActiveRecord: 590.3ms | Allocations: 86642)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/product_images_controller.rb:17:in `post_image'
+Started POST "/image" for ::1 at 2024-05-24 09:32:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fd704a7df90 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1358-x1ajh6.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+Completed 500 Internal Server Error in 827ms (ActiveRecord: 657.4ms | Allocations: 86641)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/product_images_controller.rb:18:in `post_image'
+Started GET "/" for 127.0.0.1 at 2024-05-24 09:37:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (344.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (101.6ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1159ms (Views: 0.9ms | ActiveRecord: 547.3ms | Allocations: 180771)
+
+
+Started POST "/image" for ::1 at 2024-05-24 09:38:51 +0200
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f4c8410af18 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1446-k9dvjl.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007f4c840ed350>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f4c8410af18 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1446-k9dvjl.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (24.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (27.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (3153.0ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524093851_happy-dp-16.jpg', 4, '2024-05-24 07:38:51.589025', '2024-05-24 07:38:51.589025')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (786.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 4283ms (Views: 1.8ms | ActiveRecord: 3991.1ms | Allocations: 21492)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 09:39:08 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.3ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 44ms (Views: 0.7ms | ActiveRecord: 2.7ms | Allocations: 3251)
+
+
+Started DELETE "/image/1" for 127.0.0.1 at 2024-05-24 09:43:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/home/chalwe/projects/clothing_web/app/controllers/product_images_controller.rb:18: syntax error, unexpected '}', expecting =>
+...     render json: { new_image }, status: :created
+...                              ^
+):
+  
+app/controllers/product_images_controller.rb:18: syntax error, unexpected '}', expecting =>
+Started DELETE "/image/1" for 127.0.0.1 at 2024-05-24 09:46:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProductImage Load (1.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:27:in `delete_image'
+  [1m[36mProductImage Destroy (945.4ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 1[0m
+  ↳ app/controllers/product_images_controller.rb:27:in `delete_image'
+  [1m[36mTRANSACTION (2749.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:27:in `delete_image'
+Completed 200 OK in 3858ms (Views: 0.4ms | ActiveRecord: 3717.3ms | Allocations: 91736)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 09:46:18 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (4.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.7ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 565ms (Views: 0.6ms | ActiveRecord: 131.7ms | Allocations: 107411)
+
+
+Started POST "/image" for ::1 at 2024-05-24 09:53:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f36a0a50338 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1792-rsajlk.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007f3690afe6a0>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f36a0a50338 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1792-rsajlk.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (230.5ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524095309_happy-dp-16.jpg', 4, '2024-05-24 07:53:09.963432', '2024-05-24 07:53:09.963432')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (1664.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 2339ms (Views: 1.3ms | ActiveRecord: 1965.5ms | Allocations: 176685)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 09:53:41 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (29.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (0.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1027ms (Views: 6.2ms | ActiveRecord: 36.0ms | Allocations: 25743)
+
+
+Started DELETE "/image/2" for 127.0.0.1 at 2024-05-24 09:54:02 +0200
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mProductImage Load (1.7ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:29:in `delete_image'
+  [1m[36mProductImage Destroy (2.4ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 2[0m
+  ↳ app/controllers/product_images_controller.rb:29:in `delete_image'
+  [1m[36mTRANSACTION (1518.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:29:in `delete_image'
+Completed 200 OK in 1553ms (Views: 0.8ms | ActiveRecord: 1525.4ms | Allocations: 2679)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 09:54:10 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (46.5ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 63ms (Views: 0.5ms | ActiveRecord: 48.3ms | Allocations: 3200)
+
+
+Started POST "/image" for ::1 at 2024-05-24 09:55:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (24.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fec6ca888c8 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1856-zjkchw.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007fec5cb05018>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fec6ca888c8 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1856-zjkchw.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (307.1ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524095529_happy-dp-16.jpg', 4, '2024-05-24 07:55:31.562971', '2024-05-24 07:55:31.562971')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (1516.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 3567ms (Views: 1.3ms | ActiveRecord: 3219.4ms | Allocations: 176690)
+
+
+Started DELETE "/image/3" for 127.0.0.1 at 2024-05-24 09:55:50 +0200
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:30:in `delete_image'
+  [1m[36mProductImage Destroy (1.2ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 3[0m
+  ↳ app/controllers/product_images_controller.rb:30:in `delete_image'
+  [1m[36mTRANSACTION (400.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:30:in `delete_image'
+Completed 200 OK in 424ms (Views: 0.6ms | ActiveRecord: 402.2ms | Allocations: 2728)
+
+
+Started POST "/image" for ::1 at 2024-05-24 09:57:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9d6ca64c10 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1907-1q79spk.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x000055efd2957ed8>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9d6ca64c10 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-1907-1q79spk.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (1227.8ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524095708_happy-dp-16.jpg', 4, '2024-05-24 07:57:08.982596', '2024-05-24 07:57:08.982596')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (644.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 2220ms (Views: 1.1ms | ActiveRecord: 1894.3ms | Allocations: 176684)
+
+
+Started DELETE "/image/4" for 127.0.0.1 at 2024-05-24 09:57:21 +0200
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mProductImage Load (1.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 1257)
+
+
+Started DELETE "/image/4" for 127.0.0.1 at 2024-05-24 09:58:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mProductImage Load (1.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+Completed 200 OK in 142ms (Views: 0.4ms | ActiveRecord: 26.9ms | Allocations: 90235)
+
+
+Started DELETE "/image/4" for 127.0.0.1 at 2024-05-24 10:01:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mProductImage Load (2.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 21.8ms | Allocations: 90508)
+
+
+  
+Errno::ENOENT (No such file or directory @ apply2files - /uploads/20240524095708_happy-dp-16.jpg):
+  
+app/controllers/product_images_controller.rb:29:in `delete'
+app/controllers/product_images_controller.rb:29:in `delete_image'
+Started DELETE "/image/4" for 127.0.0.1 at 2024-05-24 10:05:27 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mProductImage Load (1.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 12.2ms | Allocations: 90508)
+
+
+  
+Errno::ENOENT (No such file or directory @ apply2files - /uploads/20240524095708_happy-dp-16.jpg):
+  
+app/controllers/product_images_controller.rb:29:in `delete'
+app/controllers/product_images_controller.rb:29:in `delete_image'
+Started DELETE "/image/4" for 127.0.0.1 at 2024-05-24 10:06:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mProductImage Load (2.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+Completed 200 OK in 346ms (Views: 0.4ms | ActiveRecord: 189.0ms | Allocations: 90223)
+
+
+Started DELETE "/image/4" for 127.0.0.1 at 2024-05-24 10:08:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mProductImage Destroy (34.2ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 4[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mTRANSACTION (233.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+Completed 200 OK in 424ms (Views: 0.8ms | ActiveRecord: 299.2ms | Allocations: 91735)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:08:50 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (0.6ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 346ms (Views: 0.6ms | ActiveRecord: 91.8ms | Allocations: 107411)
+
+
+Started POST "/image" for ::1 at 2024-05-24 10:09:02 +0200
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb7d00fc2d0 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2191-1ati7bw.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007fb7d00fdd88>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb7d00fc2d0 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2191-1ati7bw.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (4.4ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524100902_happy-dp-16.jpg', 4, '2024-05-24 08:09:02.439679', '2024-05-24 08:09:02.439679')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (198.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 232ms (Views: 1.0ms | ActiveRecord: 203.5ms | Allocations: 5601)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:09:06 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (1.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (12.2ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 50ms (Views: 0.5ms | ActiveRecord: 16.8ms | Allocations: 3250)
+
+
+Started DELETE "/image/5" for 127.0.0.1 at 2024-05-24 10:09:38 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mProductImage Destroy (21.4ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 5[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mTRANSACTION (234.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+Completed 200 OK in 411ms (Views: 0.9ms | ActiveRecord: 269.1ms | Allocations: 91736)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:09:43 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (0.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 317ms (Views: 0.6ms | ActiveRecord: 28.3ms | Allocations: 107411)
+
+
+Started POST "/image" for ::1 at 2024-05-24 10:10:26 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f6d5cad86a0 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2242-1oem3jx.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007f6d48acf280>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f6d5cad86a0 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2242-1oem3jx.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (33.8ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524101026_happy-dp-16.jpg', 4, '2024-05-24 08:10:27.052780', '2024-05-24 08:10:27.052780')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (299.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 673ms (Views: 1.1ms | ActiveRecord: 351.4ms | Allocations: 176682)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:10:30 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (11.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 104ms (Views: 0.6ms | ActiveRecord: 18.9ms | Allocations: 25753)
+
+
+Started DELETE "/image/6" for 127.0.0.1 at 2024-05-24 10:11:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mProductImage Load (1.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mProductImage Destroy (11.2ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 6[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mTRANSACTION (1209.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+Completed 200 OK in 1649ms (Views: 0.9ms | ActiveRecord: 1247.1ms | Allocations: 91740)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:11:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.7ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.7ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 355ms (Views: 0.7ms | ActiveRecord: 23.1ms | Allocations: 180767)
+
+
+Started POST "/image" for ::1 at 2024-05-24 10:12:09 +0200
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa57cee8710 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2277-c9shfm.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007fa5680969a0>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa57cee8710 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2277-c9shfm.jpg>, @content_type=nil, @original_filename="happy-dp-16.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"happy-dp-16.jpg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (73.1ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524101209_happy-dp-16.jpg', 4, '2024-05-24 08:12:09.384038', '2024-05-24 08:12:09.384038')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (499.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 612ms (Views: 0.5ms | ActiveRecord: 573.0ms | Allocations: 21462)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:12:12 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.5ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 39ms (Views: 0.7ms | ActiveRecord: 3.0ms | Allocations: 3259)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:16:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.7ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (2.3ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 500ms (Views: 0.7ms | ActiveRecord: 51.5ms | Allocations: 195773)
+
+
+Started GET "/product/4" for 127.0.0.1 at 2024-05-24 10:16:07 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (10.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (8.4ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 19.2ms | Allocations: 3983)
+
+
+Started GET "/product/4" for 127.0.0.1 at 2024-05-24 10:17:13 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (1.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (1.1ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 45ms (Views: 0.5ms | ActiveRecord: 3.0ms | Allocations: 2644)
+
+
+Started POST "/image" for ::1 at 2024-05-24 10:28:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f718cdb4818 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2693-aq3hkb.jpeg>, @content_type=nil, @original_filename="Sad-Dp-by-shayariraja-3.jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"Sad-Dp-by-shayariraja-3.jpeg\"\r\n">}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007f718cb678d0>, params: {"product_id"=>"4", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f718cdb4818 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-2693-aq3hkb.jpeg>, @content_type=nil, @original_filename="Sad-Dp-by-shayariraja-3.jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"Sad-Dp-by-shayariraja-3.jpeg\"\r\n">, "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (14.9ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524102855_Sad-Dp-by-shayariraja-3.jpeg', 4, '2024-05-24 08:28:55.952893', '2024-05-24 08:28:55.952893')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (248.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 678ms (Views: 1.1ms | ActiveRecord: 305.9ms | Allocations: 176698)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 10:29:34 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (9.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 483ms (Views: 8.7ms | ActiveRecord: 18.9ms | Allocations: 25790)
+
+
+Started GET "/product/4" for 127.0.0.1 at 2024-05-24 10:35:20 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (1026.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (448.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (617.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 2796ms (Views: 0.4ms | ActiveRecord: 2609.9ms | Allocations: 2871)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 11:04:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (71.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as */*
+  [1m[36mProduct Load (230.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (88.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (3.3ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1602ms (Views: 1.1ms | ActiveRecord: 1094.5ms | Allocations: 195833)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 11:06:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (85.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as */*
+  [1m[36mProduct Load (52.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (1.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.2ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 654ms (Views: 0.7ms | ActiveRecord: 257.5ms | Allocations: 195829)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 11:09:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as */*
+  [1m[36mProduct Load (236.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.0ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 1247ms (Views: 0.7ms | ActiveRecord: 813.7ms | Allocations: 195832)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 11:27:59 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (227.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as */*
+  [1m[36mProduct Load (31.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (2.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 866ms (Views: 0.7ms | ActiveRecord: 197.5ms | Allocations: 195829)
+
+
+Started GET "/product/4" for 127.0.0.1 at 2024-05-24 11:30:35 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (43.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (3.1ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (14.6ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 94ms (Views: 0.6ms | ActiveRecord: 61.3ms | Allocations: 9568)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-05-24 11:31:11 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (1.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.3ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 40ms (Views: 0.9ms | ActiveRecord: 4.2ms | Allocations: 3259)
+
+
+Started POST "/image" for 127.0.0.1 at 2024-05-24 11:45:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (243.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb19cdcdb10 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-4608-1yqcs1l.png>, @content_type="image/png", @original_filename="Screenshot (1).png", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"Screenshot (1).png\"\r\nContent-Type: image/png\r\n">, "id"=>"7"}
+[31mUnpermitted parameters: :image, :id. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x000055bec5375e90>, params: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb19cdcdb10 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-4608-1yqcs1l.png>, @content_type="image/png", @original_filename="Screenshot (1).png", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"Screenshot (1).png\"\r\nContent-Type: image/png\r\n">, "id"=>"7", "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (294.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 2154ms (Views: 13.5ms | ActiveRecord: 1399.5ms | Allocations: 94369)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-05-24 11:46:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (28.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (39.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (16.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (1.7ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 721ms (Views: 0.6ms | ActiveRecord: 246.7ms | Allocations: 195830)
+
+
+Started POST "/image" for 127.0.0.1 at 2024-05-24 11:51:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (58.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf6cf2cb80 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-4793-1u9lcrx.jpg>, @content_type="image/jpeg", @original_filename="prof3.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"prof3.jpg\"\r\nContent-Type: image/jpeg\r\n">, "product_id"=>"7"}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007fcf6cc78718>, params: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf6cf2cb80 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-4793-1u9lcrx.jpg>, @content_type="image/jpeg", @original_filename="prof3.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"prof3.jpg\"\r\nContent-Type: image/jpeg\r\n">, "product_id"=>"7", "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (1482.0ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524115102_prof3.jpg', 7, '2024-05-24 09:51:03.125118', '2024-05-24 09:51:03.125118')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (1022.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 3511ms (Views: 0.5ms | ActiveRecord: 2994.4ms | Allocations: 176702)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-05-24 11:51:25 +0200
+Processing by ProductsController#get_products as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductImage Load (1.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+  [1m[36mProductSize Load (20.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` IN (4, 7, 9, 11, 12)[0m
+  ↳ app/controllers/products_controller.rb:5:in `get_products'
+Completed 200 OK in 230ms (Views: 0.7ms | ActiveRecord: 85.6ms | Allocations: 25848)
+
+
+Started GET "/product/4" for 127.0.0.1 at 2024-05-24 11:55:57 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (130.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+Started GET "/product/4" for 127.0.0.1 at 2024-05-24 11:55:57 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (14.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProduct Load (6.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (1.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (0.9ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 1214ms (Views: 0.5ms | ActiveRecord: 473.4ms | Allocations: 198697)
+
+
+  [1m[36mProductImage Load (47.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (4.5ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 1784ms (Views: 0.5ms | ActiveRecord: 982.9ms | Allocations: 183064)
+
+
+Started DELETE "/image/7" for 127.0.0.1 at 2024-05-24 11:56:57 +0200
+Processing by ProductImagesController#delete_image as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:25:in `delete_image'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mProductImage Destroy (314.3ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 7[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+  [1m[36mTRANSACTION (809.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:31:in `delete_image'
+Completed 200 OK in 1237ms (Views: 0.3ms | ActiveRecord: 1125.4ms | Allocations: 2721)
+
+
+Started GET "/product/4" for 127.0.0.1 at 2024-05-24 11:57:17 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (18.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (1.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (3.0ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 4[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 44ms (Views: 0.4ms | ActiveRecord: 22.4ms | Allocations: 2647)
+
+
+Started POST "/image" for 127.0.0.1 at 2024-05-24 11:58:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (18.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductImagesController#post_image as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f3e5cdbb2e8 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-4913-1bjti73.jpg>, @content_type="image/jpeg", @original_filename="prof5.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"prof5.jpg\"\r\nContent-Type: image/jpeg\r\n">, "product_id"=>"7"}
+[31mUnpermitted parameter: :image. Context: { controller: ProductImagesController, action: post_image, request: #<ActionDispatch::Request:0x00007f3e5cb2a8a8>, params: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f3e5cdbb2e8 @tempfile=#<Tempfile:/tmp/RackMultipart20240524-4913-1bjti73.jpg>, @content_type="image/jpeg", @original_filename="prof5.jpg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"prof5.jpg\"\r\nContent-Type: image/jpeg\r\n">, "product_id"=>"7", "controller"=>"product_images", "action"=>"post_image"} }[0m
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mProductImage Create (1.3ms)[0m  [1m[32mINSERT INTO `product_images` (`image_url`, `product_id`, `created_at`, `updated_at`) VALUES ('/uploads/20240524115810_prof5.jpg', 7, '2024-05-24 09:58:11.117462', '2024-05-24 09:58:11.117462')[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+  [1m[36mTRANSACTION (207.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/product_images_controller.rb:16:in `post_image'
+Completed 201 Created in 1087ms (Views: 0.6ms | ActiveRecord: 303.4ms | Allocations: 176697)
+
+
+Started GET "/product/7" for 127.0.0.1 at 2024-05-24 11:58:30 +0200
+Processing by ProductsController#get_product as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (41.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 7[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+  [1m[36mProductSize Load (1.2ms)[0m  [1m[34mSELECT `product_sizes`.* FROM `product_sizes` WHERE `product_sizes`.`product_id` = 7[0m
+  ↳ app/controllers/products_controller.rb:14:in `get_product'
+Completed 200 OK in 112ms (Views: 0.5ms | ActiveRecord: 51.4ms | Allocations: 9951)
+
+

@@ -4,10 +4,25 @@ class ProductsController < ApplicationController
     products = Product.includes(:product_images, :product_sizes).all
     render json: products.as_json(
       include: {
-      product_images: { only: [:image_url] },
+        product_images: { only: [:image_url] },
       product_sizes: { only: [:size] }
     }
   )
+  end
+
+  def get_product
+    product = Product.includes(:product_images, :product_sizes).find_by(id: params[:id])
+    if product
+      render json: product.as_json(
+        include: {
+          product_images: { only: [:image_url, :id] },
+          product_sizes: { only: [:size, :id] }
+      }
+    )
+    else
+      render json: "failed"
+    end
+
   end
 
   def post_product

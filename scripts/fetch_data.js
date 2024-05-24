@@ -1,30 +1,30 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const url = 'https://127.0.0.1:3000/product/4';
+$(document).ready(() => {
+ const URL = 'http://127.0.0.1:3000/';
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-
-  xhr.onload = function() {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      const data = JSON.parse(xhr.responseText);
-      handleProducts(data);
-    } else {
-      console.error('Error:', xhr.statusText);
-    }
-  };
-
-  xhr.onerror = function() {
-    console.error('Request failed');
-  };
-
-  xhr.send(); // Initiate the request
-
+	$.ajax({
+  	url: URL,
+  	type: 'GET',
+  	xhrFields: {
+    	withCredentials: true // Send credentials with the request
+  	},
+  	success: function(data) {
+    	if (data.status === 'success') {
+      	handleProducts(data);
+    	} else {
+      	console.log('Error fetching data');
+    	}
+  	},
+  	error: function(xhr, status, error) {
+    	console.error('Request failed:', status, error);
+  	}
+	});
+ 
   function handleProducts(data) {
-    const productsGrid = document.querySelector('#products-grid');
+    const productsGrid = document.querySelector('#products-grid_id');
     data.forEach(product => {
       handleProduct(product, productsGrid);
     });
-  }
+  };
 
   function handleProduct(product, productsGrid) {
     const productDiv = document.createElement('div');
@@ -47,6 +47,5 @@ document.addEventListener('DOMContentLoaded', function() {
     productDiv.appendChild(productPrice);
 
     productsGrid.appendChild(productDiv);
-  }
+  };
 });
-

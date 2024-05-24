@@ -7,7 +7,7 @@ url = 'http://127.0.0.1:3000/size'
 
 data = {
     "product_id": 4,
-    "size": 'XL'
+    "size": 'L'
         }
 
 response = requests.post(url, data=data)

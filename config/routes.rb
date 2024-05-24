@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'category/:category_name', to: 'categories#get_category_product'
   delete 'category', to: 'categories#delete_category'
   # defines the path for the products
+  get 'product/:id', to: 'products#get_product'
   get 'products', to: 'products#get_products'
   post 'product', to: 'products#post_product'
   put 'product/:id', to: 'products#put_product'
