@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_13_060735) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_31_091511) do
   create_table "abouts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -21,6 +21,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_060735) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "number"
+    t.string "email"
+    t.string "size"
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
   end
 
   create_table "product_images", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -57,6 +68,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_060735) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "orders", "products"
   add_foreign_key "product_images", "products"
   add_foreign_key "product_sizes", "products"
   add_foreign_key "products", "categories"
